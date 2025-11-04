@@ -1,0 +1,22 @@
+@use 'variables' as*;
+
+.sinopse {
+    background-color: $backgroundContainer;
+    padding: 10px;
+    border-radius: 8px;
+
+    &__image{
+            width: 400px;
+    float: left;
+       @media (max-width:624px) {
+        width:50%;
+        float: none;
+    }
+
+    @media(max-width:1024px){
+         width:50%;
+        float: none;
+    }
+    }
+}
+

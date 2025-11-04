@@ -1,0 +1,174 @@
+@use 'hero';
+@use 'cast';
+@use 'watch';
+@use 'variables' as*;
+@use 'sinopse';
+
+@font-face {
+    font-family: 'myFont';
+    src: url(/assets/Bebas_Neue/BebasNeue-Regular.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'myFont';
+    list-style: none;
+
+
+    @media (max-width:624px) {
+        margin: 0;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+
+html {
+    background-image: url('/images/background.jpg');
+    width: 100%;
+    max-height: 100vh;
+    min-height: 100vw;
+    background-size: cover;
+    background-attachment: fixed;
+
+    &::before {
+        top: 0;
+        left: 0;
+        position: fixed;
+        width: 100%;
+        max-height: 100vh;
+        min-height: 100vw;
+        background-size: cover;
+        background-attachment: fixed;
+        content: '';
+        background-color: $backgroundColor;
+
+        @media (max-width:624px) {
+            min-height: 100%;
+        }
+    }
+
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    position: relative;
+    max-width: 1270px;
+    width: 100%;
+    border-radius: 8px;
+
+
+
+    @media(max-width:1024px) {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    @media (max-width:624px) {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+a {
+    cursor: pointer;
+}
+
+
+@mixin text($fontSize: 24px) {
+    line-height: 50px;
+    font-size: $fontSize;
+    text-align: center;
+    letter-spacing: 2px;
+    word-spacing: 3px;
+    z-index: 2;
+    color: $black;
+
+    @media(max-width:1024px) {
+        line-height: 42px;
+    }
+
+    @media (max-width:624px) {
+        line-height: 34px;
+    }
+
+
+}
+
+.button {
+    @include text();
+    line-height: normal;
+    background-color: $red;
+    width: 150px;
+    height: 80px;
+    color: $buttonText;
+    border: none;
+    padding: 8px;
+    border-radius: 8px;
+
+    @media(max-width:1024px) {
+        font-size: 20px;
+        height: 60px;
+
+    }
+
+    @media (max-width:624px) {
+       font-size: 16px;
+          height: 60px;
+         padding: 2px;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+    }
+
+
+}
+
+.title__big {
+    @include text(48px);
+
+    @media(max-width:1024px) {
+        @include text(40px);
+    }
+
+    @media (max-width:624px) {
+        @include text(32px);
+    }
+
+
+
+}
+
+.title {
+    @include text(40px);
+
+    @media(max-width:1024px) {
+        @include text(40px);
+    }
+
+    @media (max-width:624px) {
+        @include text(28px);
+    }
+
+
+
+}
+
+.text {
+    @include text();
+
+    @media(max-width:1024px) {
+        @include text(20px);
+    }
+
+    @media (max-width:624px) {
+        @include text(16px);
+    }
+}

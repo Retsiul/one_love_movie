@@ -1,0 +1,53 @@
+@use 'variables' as*;
+
+.cast {
+    background-color: $backgroundContainer;
+    text-align: center;
+
+    padding-top: 20px;
+
+    &__container {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+
+        @media(max-width:1024px) {
+            display: flex;
+            gap: 20px;
+        }
+
+        img {
+            transition: all 0.5s ease;
+
+
+            @media(max-width:1024px) {
+
+                height: 300px;
+            }
+
+            @media (max-width:624px) {
+                width: 100%;
+            }
+
+        }
+
+        img:hover {
+            transform: scale(1.01);
+            transform: rotate(1deg);
+            transition: all 0.5s ease;
+        }
+
+        a {
+            text-decoration: none;
+            margin-left: 10px;
+
+
+            &:hover {
+                color: $red;
+            }
+
+
+        }
+    }
+}

@@ -1,0 +1,61 @@
+@use 'variables' as*;
+
+.hero {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+
+    &__buttons {
+        max-width: 1270px;
+        width: 100%;
+        position: fixed;
+        display: flex;
+        justify-content: flex-end;
+        top: 0;
+        left: right;
+        z-index: 2;
+        margin-top: 20px;
+
+        .button{
+            &:first-child {
+                margin-right: 20px;
+                   transition:visibility,background-color, 0.5s ease;
+            }
+
+            &:hover {
+                cursor: pointer;
+                background-color: darken($red, 7%);
+            }
+
+            &--is-hidden {
+                
+                background-color: transparent;
+                transition:visibility,background-color,ease;
+                visibility:hidden;
+            }
+
+          
+        }
+
+
+    }
+
+    &__images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        img {
+            width: 500px;
+
+            @media (max-width:624px) {
+                width: 100%;
+            }
+
+            @media(max-width:1024px) {
+                width: 100%;
+
+            }
+        }
+    }
+}
